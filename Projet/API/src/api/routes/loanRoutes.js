@@ -9,5 +9,8 @@ module.exports = function(app, loanController) {
         .post(loanController.create.bind(loanController))
         .get(loanController.getAll.bind(loanController))
 
+    app.route('/loans/:loanId')
+        .delete(loanController.delete.bind(loanController))
+
 
 }

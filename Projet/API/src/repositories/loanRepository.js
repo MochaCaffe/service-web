@@ -37,7 +37,7 @@ class LoanRepository {
         const copies = this.copyRepository.getAllByBookId(bookId);
         const loans = this.getAll();
 
-        _.filter(copies, ({ id }) => !_.some(loans, { copyId: id }));
+        return _.filter(copies, ({ id }) => !_.some(loans, { copyId: id }));
 	}
 
     add(loan) {
