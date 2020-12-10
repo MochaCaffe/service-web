@@ -7,12 +7,18 @@ const bodyParser = require('body-parser');
 // Import de nos objets
 const bookRoutes = require('./api/routes/bookRoutes');
 const userRoutes = require('./api/routes/userRoutes');
+const copyRoutes = require('./api/routes/copyRoutes');
+const loanRoutes = require('./api/routes/loanRoutes');
 
 const BookController = require('./api/controllers/bookController');
 const UserController = require('./api/controllers/userController');
+const CopyController = require('./api/controllers/copyController');
+const LoanController = require('./api/controllers/loanController');
 
 const BookRepository = require('./repositories/bookRepository');
 const UserRepository = require('./repositories/userRepository');
+const CopyRepository = require('./repositories/copyRepository');
+const LoanRepository = require('./repositories/loanRepository');
 
 // Création de nos objets
 const db = new JsonDB("./data/library", true, true);
@@ -24,6 +30,14 @@ const bookController = new BookController(bookRepository);
 const userRepository = new UserRepository(db);
 const userController = new UserController(userRepository);
 
+//Ressource Copy
+const copyRepository = new CopyRepository(db,bookRepository);
+const copyController = new CopyController(copyRepository);
+
+//Ressource Loans
+const loanRepository = new LoanRepository(db, copyRepository,userRepository);
+const loanController = new LoanController(loanRepository);
+
 // Création du serveur
 const app = express();
 app.use(bodyParser.json());
@@ -31,7 +45,9 @@ app.use(cors());
 
 // Configuration des routes
 bookRoutes(app, bookController);
-userRoutes(app, userController /* A modifier */);
+userRoutes(app, userController);
+copyRoutes(app, copyController);
+loanRoutes(app, loanController);
 /* A compléter */
 
 

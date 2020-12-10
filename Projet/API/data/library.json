@@ -16,6 +16,14 @@
                 {
                     "submissionDate": "2017/12/08",
                     "id": "3e35b560-dac1-11e7-92c1-a1c74e59ace4"
+                },
+                {
+                    "id": "0a7c89d4-72f2-4066-9778-eec61bd2f5ce",
+                    "submissionDate": "2020/12/10"
+                },
+                {
+                    "id": "cbe7890d-82e6-4355-a56a-0a4f3b0d8451",
+                    "submissionDate": "2020/12/10"
                 }
             ]
         },
@@ -51,6 +59,13 @@
             "copyId": "3e35b560-dac1-11e7-92c1-a1c74e59ace4",
             "loanDate": "2017/12/07",
             "id": "33d16140-dac2-11e7-a2f4-494b3ae468c5"
+        },
+        {
+            "copyId": "cbe7890d-82e6-4355-a56a-0a4f3b0d8451",
+            "userId": "2b793500-dabc-11e7-96d9-3f4994e35ed5",
+            "bookId": "231ac800-da86-11e7-b11a-f1a3b541af38",
+            "id": "d1222431-a7c6-44e6-ad5e-918001f4bc1a",
+            "loanDate": "2020/12/10"
         }
     ]
 }
