@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../model/book';
 import { BookService } from '../services/book.service';
 import { CopyService } from '../services/copy.service';
-import { Copy } from '../model/copy';
 
 @Component({
   selector: 'app-book-list',

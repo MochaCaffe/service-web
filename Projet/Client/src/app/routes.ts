@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
         path: 'loans',
         component: LoanListComponent
     },
-    { 
+    {
       path: '**',
       redirectTo: '/books',
       pathMatch: 'full'

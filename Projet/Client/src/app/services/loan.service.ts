@@ -9,7 +9,7 @@ import { BaseHttpService } from './baseHttpService';
 
 @Injectable()
 export class LoanService extends BaseHttpService {
-  public post(bookId,copyId, userId): Observable<void> {
+  public post(bookId, copyId, userId): Observable<void> {
       return this.http.post<Loan>(`${this.baseUrl}/loans`,
           {
               copyId: copyId,

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 
 import { User } from '../model/user';
 import { BaseHttpService } from './baseHttpService';
+import {Book} from '../model/book';
 
 @Injectable()
 export class UserService extends BaseHttpService {
@@ -11,4 +12,9 @@ export class UserService extends BaseHttpService {
         return this.http
             .get<User[]>(`${this.baseUrl}/users`);
   }
+
+    public get(userId: string): Observable<User> {
+        return this.http
+            .get<User>(`${this.baseUrl}/users/${userId}`);
+    }
 }
